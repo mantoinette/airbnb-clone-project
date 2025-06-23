@@ -1,62 +1,77 @@
-## Technology Stack
-
-This project utilizes a variety of modern technologies to build a scalable and efficient web application. Each technology plays a specific role in the system:
-
-### 🐍 Django
-A high-level Python web framework used to develop the backend of the application. Django provides a robust structure for building secure and maintainable RESTful APIs quickly and efficiently.
-
-### 🐘 PostgreSQL
-An advanced open-source relational database system used to store structured data such as user profiles, property listings, bookings, and reviews. It offers reliability, strong performance, and powerful querying capabilities.
-
-### 🔍 GraphQL
-A query language for APIs that allows the frontend to request exactly the data it needs. GraphQL helps improve performance and flexibility in communication between the frontend and backend.
-
-### 🐙 Git & GitHub
-Git is a version control system used to track code changes, while GitHub is the platform used for hosting the repository and collaborating as a team.
-
-### 🐳 Docker
-A containerization tool used to package the application and its dependencies, ensuring consistent environments across development, testing, and production.
-
-### 🚀 Heroku / AWS
-Cloud platforms used to deploy the application and make it accessible online. They provide hosting infrastructure, database integration, and scalability options.
-
-### 🧪 Pytest / Postman
-Used for testing the backend services. Pytest enables automated testing of Django components, and Postman is used for testing API endpoints manually.
-
 ## Database Design
 
-The database for this project is designed using **PostgreSQL** to store and manage structured data efficiently. Below is an overview of the main entities and their relationships.
+The database for this project is structured to support user interactions, property listings, bookings, reviews, and payments in a scalable and relational manner. The database is managed using **PostgreSQL**, with relationships handled through Django's ORM.
 
-### 🧱 Entities and Their Purpose
+### 🧍 Users
+Stores information about people using the platform (guests and hosts).
 
-- **User**
-  - Stores user information such as name, email, password (hashed), and role.
-  
-- **Property**
-  - Represents a listed apartment or house with details like title, location, description, price, and host (linked to a User).
-  
-- **Booking**
-  - Tracks reservation details, including user who booked, property booked, dates, and total price.
-  
-- **Review**
-  - Contains user-generated reviews and ratings for a property.
+**Key Fields:**
+- `id`: Unique identifier
+- `name`: Full name of the user
+- `email`: Unique email address
+- `password`: Hashed password for authentication
+- `role`: Defines if the user is a host or a guest
 
-- **Image**
-  - Stores image URLs or paths associated with a property.
+---
 
-### 🔗 Relationships
+### 🏠 Properties
+Represents listings posted by hosts.
 
-- One **User** can own multiple **Properties**
-- One **User** can make multiple **Bookings**
-- One **Booking** is linked to one **Property**
-- One **Property** can have multiple **Reviews**
-- One **Property** can have multiple **Images**
+**Key Fields:**
+- `id`: Unique identifier
+- `title`: Name of the property
+- `description`: Detailed description
+- `location`: Address or coordinates
+- `price_per_night`: Cost per night
+- `owner_id`: Foreign key to Users table (host)
 
-### 🗂️ Tools Used
+---
 
-- **PostgreSQL** – Relational database engine  
-- **Django ORM** – To define models and handle database queries in Python  
-- **ERD (Entity-Relationship Diagram)** – [Include an image or link if you have one]
+### 📅 Bookings
+Tracks reservations made by guests.
 
+**Key Fields:**
+- `id`: Unique identifier
+- `property_id`: Foreign key to Properties table
+- `user_id`: Foreign key to Users table (guest)
+- `start_date`: Check-in date
+- `end_date`: Check-out date
+- `total_price`: Calculated price for the stay
 
+---
+
+### ⭐ Reviews
+Allows guests to leave feedback on properties.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `user_id`: Foreign key to Users table (guest)
+- `property_id`: Foreign key to Properties table
+- `rating`: Numeric score (e.g., 1–5)
+- `comment`: Textual feedback
+
+---
+
+### 💳 Payments
+Handles transaction records for bookings.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `booking_id`: Foreign key to Bookings table
+- `payment_method`: e.g., Credit Card, PayPal
+- `payment_status`: e.g., Completed, Failed, Pending
+- `payment_date`: Timestamp of the payment
+
+---
+
+### 🔗 Entity Relationships
+
+- One **User** (host) can own many **Properties**
+- One **User** (guest) can make many **Bookings**
+- One **Property** can have many **Bookings**
+- One **Property** can have many **Reviews**
+- One **Booking** is associated with one **Payment**
+- One **User** can write many **Reviews**
+
+---
 

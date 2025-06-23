@@ -1,3 +1,9 @@
+# Airbnb Clone Project
+
+This project replicates the core functionalities of a real-world accommodation booking platform, such as Airbnb. It allows users to list, discover, and book properties while ensuring secure transactions and data integrity.
+
+---
+
 ## Features
 
 This project replicates the core functionalities of a real-world accommodation booking platform, such as Airbnb. Each feature is designed to provide a smooth and secure experience for users, hosts, and administrators.
@@ -22,6 +28,8 @@ Allows users to search properties based on location, price, availability, and ra
 
 ### 🔐 Security & Authorization
 Implements features like hashed passwords, JWT tokens (or sessions), and access controls. This ensures that only authorized users can access or modify data relevant to their roles.
+
+---
 
 ## Feature Breakdown
 
@@ -48,5 +56,46 @@ Enables guests to search and filter properties by location, price, and availabil
 ### 🔐 Security
 Implements authentication, authorization, and input validation to protect user data and system integrity.
 
+---
 
+## API Security
 
+API security is vital for protecting user data, handling payments safely, and maintaining the trust and integrity of the platform. The following measures have been implemented:
+
+### 🔐 Authentication
+The system uses token-based authentication (e.g., JWT) to verify user identity. This ensures that only registered users can access protected endpoints.
+
+**Why it matters:**  
+Prevents unauthorized users from accessing or manipulating data.
+
+---
+
+### 🛂 Authorization
+Role-based access control restricts actions based on user roles (guest, host, admin). Each user can only perform operations allowed by their access level.
+
+**Why it matters:**  
+Ensures users cannot access or modify data that doesn't belong to them.
+
+---
+
+### 📈 Rate Limiting
+API endpoints are protected with rate limiting to prevent abuse, such as brute-force login attempts or denial-of-service attacks.
+
+**Why it matters:**  
+Helps maintain performance and fairness, while protecting the system from overload.
+
+---
+
+### 🔍 Input Validation & Data Sanitization
+User input is validated and sanitized to prevent SQL injection, XSS, and other injection-based attacks.
+
+**Why it matters:**  
+Preserves data integrity and protects the platform from common web vulnerabilities.
+
+---
+
+### 🔒 Secure Payments
+Sensitive data during transactions is handled securely using HTTPS and tokenization. No raw payment information is stored on the server.
+
+**Why it matters:**  
+Protects users from financial fraud and unauthorized access to payment data.

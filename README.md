@@ -23,3 +23,40 @@ Cloud platforms used to deploy the application and make it accessible online. Th
 ### 🧪 Pytest / Postman
 Used for testing the backend services. Pytest enables automated testing of Django components, and Postman is used for testing API endpoints manually.
 
+## Database Design
+
+The database for this project is designed using **PostgreSQL** to store and manage structured data efficiently. Below is an overview of the main entities and their relationships.
+
+### 🧱 Entities and Their Purpose
+
+- **User**
+  - Stores user information such as name, email, password (hashed), and role.
+  
+- **Property**
+  - Represents a listed apartment or house with details like title, location, description, price, and host (linked to a User).
+  
+- **Booking**
+  - Tracks reservation details, including user who booked, property booked, dates, and total price.
+  
+- **Review**
+  - Contains user-generated reviews and ratings for a property.
+
+- **Image**
+  - Stores image URLs or paths associated with a property.
+
+### 🔗 Relationships
+
+- One **User** can own multiple **Properties**
+- One **User** can make multiple **Bookings**
+- One **Booking** is linked to one **Property**
+- One **Property** can have multiple **Reviews**
+- One **Property** can have multiple **Images**
+
+### 🗂️ Tools Used
+
+- **PostgreSQL** – Relational database engine  
+- **Django ORM** – To define models and handle database queries in Python  
+- **ERD (Entity-Relationship Diagram)** – [Include an image or link if you have one]
+
+
+

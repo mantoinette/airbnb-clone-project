@@ -99,3 +99,18 @@ Sensitive data during transactions is handled securely using HTTPS and tokenizat
 
 **Why it matters:**  
 Protects users from financial fraud and unauthorized access to payment data.
+
+## CI/CD Pipeline
+
+A **CI/CD (Continuous Integration and Continuous Deployment)** pipeline is a set of automated processes that allow teams to build, test, and deploy code quickly and reliably. It ensures that any changes pushed to the codebase go through a series of checks before being released to production.
+
+### 🚀 Why CI/CD Is Important
+CI/CD pipelines help maintain code quality by automating testing and integration tasks, reducing human error, and enabling faster delivery of new features and bug fixes. This is especially important in collaborative projects where multiple developers are working on different parts of the application.
+
+### 🛠️ Tools Used or Recommended
+- **GitHub Actions** – Automates testing, linting, and deployment directly from GitHub.
+- **Docker** – Containerizes the application to ensure consistent environments across development, testing, and production.
+- **Heroku / AWS / Render** – Platforms for deploying and hosting the application automatically after successful builds.
+- **Pytest** – Used for writing and running automated tests during the CI phase.
+
+By integrating these tools into a CI/CD pipeline, we ensure that every code change is validated and safely deployed, enhancing the stability and scalability of the project.

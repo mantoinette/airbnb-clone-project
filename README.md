@@ -23,3 +23,30 @@ Allows users to search properties based on location, price, availability, and ra
 ### 🔐 Security & Authorization
 Implements features like hashed passwords, JWT tokens (or sessions), and access controls. This ensures that only authorized users can access or modify data relevant to their roles.
 
+## Feature Breakdown
+
+The project includes a set of core features that enable users and hosts to interact with the platform effectively. Below is a detailed breakdown of each major feature and its role in the system.
+
+### 👤 User Management
+Handles user registration, login, and profile updates. It supports secure authentication and role-based access control (e.g., host or guest).
+
+### 🏘️ Property Management
+Allows hosts to create, update, and delete property listings. Listings include details such as title, description, price, location, and images.
+
+### 📅 Booking System
+Enables guests to book available properties for specific dates. It prevents date conflicts and calculates the total cost based on the price per night and stay duration.
+
+### 💳 Payment Processing
+Processes payments tied to bookings. It records payment status, method, and timestamps, ensuring secure and trackable transactions.
+
+### ⭐ Reviews & Ratings
+Lets users leave reviews and ratings after a completed stay. This promotes accountability and helps future guests make informed decisions.
+
+### 🔎 Search and Filter
+Enables guests to search and filter properties by location, price, and availability. Improves user experience by narrowing down relevant results.
+
+### 🔐 Security
+Implements authentication, authorization, and input validation to protect user data and system integrity.
+
+
+

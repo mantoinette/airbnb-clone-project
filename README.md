@@ -1,77 +1,25 @@
-## Database Design
+## Features
 
-The database for this project is structured to support user interactions, property listings, bookings, reviews, and payments in a scalable and relational manner. The database is managed using **PostgreSQL**, with relationships handled through Django's ORM.
+This project replicates the core functionalities of a real-world accommodation booking platform, such as Airbnb. Each feature is designed to provide a smooth and secure experience for users, hosts, and administrators.
 
-### 🧍 Users
-Stores information about people using the platform (guests and hosts).
+### 👤 User Management
+Allows users to register, log in, and manage their profiles. The system securely handles user authentication and role-based access, enabling users to act as either guests or hosts.
 
-**Key Fields:**
-- `id`: Unique identifier
-- `name`: Full name of the user
-- `email`: Unique email address
-- `password`: Hashed password for authentication
-- `role`: Defines if the user is a host or a guest
+### 🏘️ Property Management
+Enables hosts to list properties, upload images, add descriptions, set pricing, and manage availability. This feature ensures that users can effectively showcase and update their accommodations.
 
----
+### 📅 Booking System
+Allows guests to search for properties, view availability, and make bookings. It ensures date validation, price calculation, and real-time updates to avoid double-bookings.
 
-### 🏠 Properties
-Represents listings posted by hosts.
+### 💳 Payment Processing
+Handles payment transactions associated with bookings. It supports different payment methods and maintains transaction history to ensure transparency and trust between users.
 
-**Key Fields:**
-- `id`: Unique identifier
-- `title`: Name of the property
-- `description`: Detailed description
-- `location`: Address or coordinates
-- `price_per_night`: Cost per night
-- `owner_id`: Foreign key to Users table (host)
+### ⭐ Review & Rating System
+Enables guests to leave reviews and ratings after completing a stay. This promotes quality control, trust, and accountability between hosts and guests.
 
----
+### 🔎 Search and Filter
+Allows users to search properties based on location, price, availability, and ratings. This enhances the user experience by making it easier to find relevant listings quickly.
 
-### 📅 Bookings
-Tracks reservations made by guests.
-
-**Key Fields:**
-- `id`: Unique identifier
-- `property_id`: Foreign key to Properties table
-- `user_id`: Foreign key to Users table (guest)
-- `start_date`: Check-in date
-- `end_date`: Check-out date
-- `total_price`: Calculated price for the stay
-
----
-
-### ⭐ Reviews
-Allows guests to leave feedback on properties.
-
-**Key Fields:**
-- `id`: Unique identifier
-- `user_id`: Foreign key to Users table (guest)
-- `property_id`: Foreign key to Properties table
-- `rating`: Numeric score (e.g., 1–5)
-- `comment`: Textual feedback
-
----
-
-### 💳 Payments
-Handles transaction records for bookings.
-
-**Key Fields:**
-- `id`: Unique identifier
-- `booking_id`: Foreign key to Bookings table
-- `payment_method`: e.g., Credit Card, PayPal
-- `payment_status`: e.g., Completed, Failed, Pending
-- `payment_date`: Timestamp of the payment
-
----
-
-### 🔗 Entity Relationships
-
-- One **User** (host) can own many **Properties**
-- One **User** (guest) can make many **Bookings**
-- One **Property** can have many **Bookings**
-- One **Property** can have many **Reviews**
-- One **Booking** is associated with one **Payment**
-- One **User** can write many **Reviews**
-
----
+### 🔐 Security & Authorization
+Implements features like hashed passwords, JWT tokens (or sessions), and access controls. This ensures that only authorized users can access or modify data relevant to their roles.
 

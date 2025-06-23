@@ -1,24 +1,25 @@
-## Team Roles
+## Technology Stack
 
-In the development of this project, each team member assumed a specific role to ensure a successful and organized workflow. Below are the key roles and their responsibilities, inspired by best practices in software development teams and aligned with the ITRexGroup blog.
+This project utilizes a variety of modern technologies to build a scalable and efficient web application. Each technology plays a specific role in the system:
 
-### 🔧 Backend Developer
-Responsible for implementing the server-side logic of the application. This includes designing APIs, handling requests/responses, integrating with the database, and ensuring performance and security of the application backend.
+### 🐍 Django
+A high-level Python web framework used to develop the backend of the application. Django provides a robust structure for building secure and maintainable RESTful APIs quickly and efficiently.
 
-### 🧠 Database Administrator (DBA)
-Manages the design, implementation, and maintenance of the database. Ensures data is structured efficiently, remains consistent, and is backed up. The DBA also works closely with backend developers to optimize queries and storage.
+### 🐘 PostgreSQL
+An advanced open-source relational database system used to store structured data such as user profiles, property listings, bookings, and reviews. It offers reliability, strong performance, and powerful querying capabilities.
 
-### 🖥️ Frontend Developer
-Develops the client-side interface, ensuring that users interact with a responsive, user-friendly, and visually appealing platform. Collaborates with backend developers to consume APIs and display data correctly.
+### 🔍 GraphQL
+A query language for APIs that allows the frontend to request exactly the data it needs. GraphQL helps improve performance and flexibility in communication between the frontend and backend.
 
-### 🚀 DevOps Engineer
-Handles application deployment, version control, and CI/CD pipelines. Ensures that the application runs smoothly in development, staging, and production environments. Also responsible for monitoring and logging.
+### 🐙 Git & GitHub
+Git is a version control system used to track code changes, while GitHub is the platform used for hosting the repository and collaborating as a team.
 
-### 🔐 Security Specialist
-Implements security best practices, including authentication, authorization, and data protection. Ensures the application is resistant to vulnerabilities such as XSS, CSRF, and SQL injection.
+### 🐳 Docker
+A containerization tool used to package the application and its dependencies, ensuring consistent environments across development, testing, and production.
 
-### 🧪 QA Engineer / Tester
-Develops and executes test plans to verify the application meets quality standards. Identifies bugs and ensures features function as intended through both manual and automated testing.
-    commit 
-### 📋 Project Manager
-Oversees the project timeline, task allocation, and communication. Facilitates collaboration among team members and ensures deliverables are completed on time and according to specifications.
+### 🚀 Heroku / AWS
+Cloud platforms used to deploy the application and make it accessible online. They provide hosting infrastructure, database integration, and scalability options.
+
+### 🧪 Pytest / Postman
+Used for testing the backend services. Pytest enables automated testing of Django components, and Postman is used for testing API endpoints manually.
+
